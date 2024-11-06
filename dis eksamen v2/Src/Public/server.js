@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '.')));
 app.use('/api', apiRoutes);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'login.html')); // Eller brug en anden startside, som fx 'index.html'
+    res.sendFile(path.join(__dirname, 'JuiceAPP.html')); // Eller brug en anden startside, som fx 'index.html'
 });
 
 // Route for the main donation page
