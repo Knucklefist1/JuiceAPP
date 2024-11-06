@@ -24,12 +24,7 @@ app.use(express.static(path.join(__dirname, '.')));
 app.use('/api', apiRoutes);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'JuiceAPP.html')); // Eller brug en anden startside, som fx 'index.html'
-});
-
-// Route for the main donation page
-app.get('/donation', (req, res) => {
-    res.sendFile(path.join(__dirname, 'donation.html'));
+    res.sendFile(path.join(__dirname, 'JuiceAp.html')); // Eller brug en anden startside, som fx 'index.html'
 });
 
 // Start the server on the specified port, or default to 3000
