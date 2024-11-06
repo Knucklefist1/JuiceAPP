@@ -1,21 +1,33 @@
 // server.js
 
+// Load environment variables from the .env file
+require('dotenv').config();
+
 const express = require('express');
-const { createPaymentIntent } = require('./stripePayment'); // Import the createPaymentIntent function from stripePayment.js
+const bodyParser = require('body-parser');
+const path = require('path');
+
+// Import the API routes from the Routes folder
+const apiRoutes = require(path.join(__dirname, '../Routes/APIroutes'));
+
 const app = express();
 
+// Middleware to parse JSON and URL-encoded data
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.post('/create-payment-intent', async (req, res) => {
-    const { amount } = req.body;
+// Serve static files from the Public directory
+app.use(express.static(path.join(__dirname, '.')));
 
-    try {
-        const clientSecret = await createPaymentIntent(amount, 'eur');
-        res.send({ clientSecret });
-    } catch (error) {
-        console.error('Error creating payment intent:', error);
-        res.status(500).send({ error: error.message });
-    }
+// Use the imported routes with '/api' prefix
+app.use('/api', apiRoutes);
+
+// Route for the main donation page
+app.get('/donation', (req, res) => {
+    res.sendFile(path.join(__dirname, 'donation.html'));
 });
 
-app.listen(3000, () => console.log('Server kører på port 3000'));
+// Start the server on the specified port, or default to 3000
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
