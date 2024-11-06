@@ -23,6 +23,10 @@ app.use(express.static(path.join(__dirname, '.')));
 // Use the imported routes with '/api' prefix
 app.use('/api', apiRoutes);
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login.html')); // Eller brug en anden startside, som fx 'index.html'
+});
+
 // Route for the main donation page
 app.get('/donation', (req, res) => {
     res.sendFile(path.join(__dirname, 'donation.html'));
