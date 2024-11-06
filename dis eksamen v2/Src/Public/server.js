@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '.')));
 app.use('/api', apiRoutes);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'JuiceAp.html')); // Eller brug en anden startside, som fx 'index.html'
+    res.sendFile(path.join(__dirname, 'JuiceApp.html')); // Eller brug en anden startside, som fx 'index.html'
 });
 
 // Start the server on the specified port, or default to 3000
