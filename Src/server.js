@@ -8,6 +8,9 @@ const path = require("path");
 const app = express();
 const bodyParser = require('body-parser');
 
+// Use CORS middleware to allow cross-origin requests
+app.use(cors()); // Allow all origins
+
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,10 +20,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'Src', 'Public')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Public', 'JuiceApp.html'));
+    res.sendFile(path.join(__dirname, 'Src', 'Public', 'JuiceApp.html'));
 });
 
 // Start the server on the specified port, or default to 3000
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
