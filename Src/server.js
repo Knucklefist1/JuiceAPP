@@ -1,7 +1,6 @@
 // server.js
 
 // Load environment variables from the .env file
-
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -21,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'Public')));
 
 // Route for the root of the website
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Public', 'JuiceApp.html'));
+    res.sendFile(path.join(__dirname, 'Public', 'juiceApp.html'));
 });
 
 // Start the server on the specified port, or default to 3000
