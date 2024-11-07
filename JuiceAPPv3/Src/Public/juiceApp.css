@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #333;
+}
+
+header {
+    background-image: url('/Src/Public/Images/joe and the juice background.jpg'); /* Erstat med det rigtige billede */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    height: 90vh; /* Tilføjer højde til at matche designet */
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay for bedre kontrast */
+    z-index: 1;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Tilpas logo størrelse */
+    margin-left: 20px;
+}
+
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-center li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.user-options {
+    margin-right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.user-options button, .user-options a {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    line-height: 1.6;
+    font-weight: 500;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Giver en let skygge */
+}
+
+.hero p span {
+    color: #f7b7da; /* Fremhæv vigtige ord i en lyserød farve */
+    font-weight: bold;
+}
+
+.order-btn {
+    background-color: #f7b7da;
+    border: none;
+    padding: 10px 20px;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Tilføj knap-skygge */
+}
+
+.order-btn:hover {
+    background-color: #e5a7c7;
+    transform: scale(1.05); /* Lidt større ved hover */
+}
+
+main {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #333;
+}
+
+main h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 5px;
+    width: 180px;
+    text-align: center;
+    font-weight: bold;
+    color: #f7b7da;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Existing CSS code */
+
+.cookie-consent {
+    display: none; /* Hidden by default, shown with JavaScript if needed */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #444;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    text-align: center;
+}
+
+.cookie-consent p {
+    margin-bottom: 10px;
+}
+
+.cookie-consent button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cookie-consent button:first-of-type {
+    background-color: #f7b7da;
+    color: #000;
+}
+
+.cookie-consent button:last-of-type {
+    background-color: #666;
+    color: #fff;
+}
