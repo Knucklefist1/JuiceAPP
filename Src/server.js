@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'Src', 'Public')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Src', 'Public', 'JuiceApp.html'));
+    res.sendFile(path.join(__dirname, 'Public', 'JuiceApp.html'));
 });
 
 // Start the server on the specified port, or default to 3000
