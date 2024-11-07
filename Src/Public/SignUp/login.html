@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Tilføj den korrekte sti til CSS-filen -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- HOME-knap med opdateret sti -->
+    <button class="home-btn" onclick="window.location.href='../juiceApp.html'">HOME</button>
+
+    <div class="modal">
+        <button class="close-btn" onclick="window.location.href='../JuiceApp.html'">&times;</button>
+        <h1>Login to Your Account</h1>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        
+        <!-- Link til signup-side med opdateret sti -->
+        <p class="link-text">
+            Don't have an account? <a href="signup.html">Sign up here</a>
+        </p>
+    </div>
+
+    <!-- Tilføj den korrekte sti til JavaScript-filen -->
+    <script src="login.js"></script>
+</body>
+</html>
